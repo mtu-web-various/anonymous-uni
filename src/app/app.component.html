@@ -1,16 +1,18 @@
 <app-header></app-header>
-<div class="content" 
-    fxLayout="row" 
-    fxLayout.xs="column" 
+
+<div class="content"
+    fxLayout="row"
+    fxLayout.xs="column"
     fxFlexFill >
   <div fxFlex="25" class="sec1" >
       <app-topiclist></app-topiclist>
   </div>
   <div fxFlex="60" class="sec2" >
-      <app-postlist></app-postlist>
+      <router-outlet></router-outlet>
   </div>
   <div fxFlex="15" class="sec3" >
       <app-ads></app-ads>
   </div>
 </div>
-  
+
+
