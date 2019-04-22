@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 import { MatToolbarModule,
          MatCardModule,
          MatInputModule,
@@ -40,7 +40,6 @@ import { TopiclistComponent } from './topics/topiclist/topiclist.component';
     BrowserAnimationsModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule,
     MatToolbarModule,
     MatCardModule,
     MatInputModule,

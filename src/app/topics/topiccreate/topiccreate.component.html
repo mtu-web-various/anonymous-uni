@@ -1,7 +1,13 @@
 <mat-card>
-  <form [formGroup]="form" (submit)=(onSaveTopic())>
+  <form (submit)="onSaveTopic(topicForm)" #topicForm = "ngForm">
     <mat-form-field>
-      <input matInput type="text" formControlName="topicName" placeholder="Topic Name">
+      <input ngModel 
+      matInput 
+      type="text" 
+      name="topicName" 
+      placeholder="Topic Name" 
+      required
+      #topicName = "ngModel">
     </mat-form-field>
     <button mat-raised-button type="submit">Create</button>
   </form>

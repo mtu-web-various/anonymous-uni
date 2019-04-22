@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { Topic } from '../../_models/topic.model';
+import { NgForm } from '@angular/forms';
+import { Router } from "@angular/router";
+
+import { TopicService } from '../topic.service';
 
 @Component({
   selector: 'app-topiccreate',
@@ -8,18 +10,17 @@ import { Topic } from '../../_models/topic.model';
   styleUrls: ['./topiccreate.component.css']
 })
 export class TopiccreateComponent implements OnInit {
-  form: FormGroup;
-  topic: Topic;
 
-  constructor() { }
+  constructor(public topicService: TopicService, private router: Router) { }
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
-  onSaveTopic(){
-    if(this.form.invalid){
+  onSaveTopic(form: NgForm){
+    if(form.invalid){
       return;
     }
+    this.topicService.addTopic(form.value.topicName);
+    //this.router.navigate(['']);
   }
 
 }

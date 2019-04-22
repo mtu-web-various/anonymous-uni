@@ -1,7 +1,7 @@
 export interface Topic{
-  topicID: string;
+  topicID?: string;
   topicName: string;
-  creator: string;
-  universityID: string;
-  postsNumber: number;
+  creator?: string;
+  universityID?: string;
+  postsNumber?: number;
 }
