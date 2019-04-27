@@ -25,5 +25,36 @@ router.post("/signup", (req, res, next) => {
 });
 
 router.post("/login", (req, res, next) => {
+    let fetchedUser;
+    User.findOne({email: req.body.email})
+        .then(user => {
+            if(!user){
+                return res.status(401).json({
+                    message: "Auth failed"
+                });
+            }
+            fetchedUser = user;
+            return bcrypt.compare(req.body.password, user.password);
+        }).then(response => {
+            if(!response){
+                return res.status(401).json({
+                    message: "Auth failed"
+                });
+            }
+            const token = jwt.sign(
+                { email: fetchedUser.email, password: fetchedUser.password },
+                 'This_is_the_clue_12345_9876', 
+                 { expiresIn: '1h' });
+                 res.status(200).json({
+                     token: token,
+                     expiresIn: 3600,
+                     userId: fetchedUser._id
+                 });
+        }).catch(err => {
+            return res.status(401).json({
+                message: "Auth failed"
+            });
+        });
+    });
 
-});
+module.exports = router;

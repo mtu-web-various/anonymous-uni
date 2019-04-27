@@ -3,6 +3,8 @@ const app = express();
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 
+const userRoutes = require('./routes/user');
+
 //NidaYZ5aC4LXKqLD
 mongoose
     .connect("mongodb+srv://talhamucar:NidaYZ5aC4LXKqLD@cluster0-dnv2d.mongodb.net/anynomous-uni")
@@ -31,5 +33,7 @@ app.use((req, res, next) => {
 app.get("/", function(req, res){
     res.send("backend is working");
 });
+
+app.use("/api/user", userRoutes);
 
 module.exports = app;
