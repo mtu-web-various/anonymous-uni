@@ -7,7 +7,7 @@ const userRoutes = require('./routes/user');
 
 //NidaYZ5aC4LXKqLD
 mongoose
-    .connect("mongodb+srv://talhamucar:NidaYZ5aC4LXKqLD@cluster0-dnv2d.mongodb.net/anynomous-uni")
+    .connect("mongodb+srv://talhamucar:NidaYZ5aC4LXKqLD@cluster0-dnv2d.mongodb.net/anynomous-uni", { useNewUrlParser: true })
         .then(() => {console.log("DB connection is successfull");})
         .catch(() =>{console.log("DB connection error");});
 

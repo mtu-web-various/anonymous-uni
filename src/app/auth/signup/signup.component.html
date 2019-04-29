@@ -1,10 +1,10 @@
 <mat-card>
-  <form (submit)="onSignUp(SignUpForm)" #SignUpForm>
+  <form (submit)="onSignUp(SignUpForm)" #SignUpForm="ngForm">
     <mat-form-field>
-      <input matInput ngModel name="email" type="email" placeholder="email" required> 
+      <input matInput ngModel name="email" type="email" placeholder="email" required>
     </mat-form-field>
     <mat-form-field>
-      <input matInput ngModel name="password" type="password" placeholder="password" required> 
+      <input matInput ngModel name="password" type="password" placeholder="password" required>
     </mat-form-field>
     <button mat-raised-button type="submit">Sign Up</button>
   </form>

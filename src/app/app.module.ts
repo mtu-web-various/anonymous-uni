@@ -3,6 +3,8 @@ import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+
 import { MatToolbarModule,
          MatCardModule,
          MatInputModule,
@@ -20,6 +22,7 @@ import { PostlistComponent } from './posts/postlist/postlist.component';
 import { PostcreateComponent } from './posts/postcreate/postcreate.component';
 import { TopiccreateComponent } from './topics/topiccreate/topiccreate.component';
 import { TopiclistComponent } from './topics/topiclist/topiclist.component';
+
 
 @NgModule({
   declarations: [
@@ -40,6 +43,7 @@ import { TopiclistComponent } from './topics/topiclist/topiclist.component';
     BrowserAnimationsModule,
     AppRoutingModule,
     FormsModule,
+    HttpClientModule,
     MatToolbarModule,
     MatCardModule,
     MatInputModule,
